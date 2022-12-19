@@ -17,7 +17,7 @@ namespace web.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) 
         {
-            options.UseSqlServer(configuration.GetConnectionString("DatabaseContext"));
+            options.UseSqlServer(configuration.GetConnectionString("AzureContext"));
         }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder)
