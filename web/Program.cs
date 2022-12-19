@@ -33,11 +33,11 @@ if (app.Environment.IsDevelopment())
 }
 app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors(builder => {
-        builder.AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowAnyOrigin();
-    });
+    app.UseSwaggerUI(c =>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            c.RoutePrefix = string.Empty;
+        });
 
 
 
