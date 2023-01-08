@@ -1,6 +1,3 @@
-kratek opis delovanja celotnega sistema
-
-
 # SOCIAL NETWORK (social media aplikacija)
 
 ## Avtorja
