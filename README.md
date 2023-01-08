@@ -1,16 +1,11 @@
-
-
-  
-    zaslonske slike grafičnega vmesnika vaše mobilne aplikacije in spletne aplikacije (cca 5 zaslonskih slik vse skupaj),
-    kratek opis delovanja celotnega sistema
-    sliko podatkovnega modela podatkovne baze z opisom (diagram lahko zgradite z orodjem SQL Server Management Studio (SSMS)).
-
+zaslonske slike grafičnega vmesnika vaše mobilne aplikacije in spletne aplikacije (cca 5 zaslonskih slik vse skupaj),
+kratek opis delovanja celotnega sistema
 
 
 # ADMIN PANEL (social media aplikacija)
 
 ## Avtorja
-63210324 Nejc Sneberger (spletna aplikacija, spletna storitev, podatkovna baza) <br />
+63210324 Nejc Šneberger  (spletna aplikacija, spletna storitev, podatkovna baza) <br />
 63210303 Tilen Smole (android odjemalec, porocilo, spletna storitev)
 
 ## Spletna aplikacija
@@ -29,3 +24,4 @@ Namen mobilne aplikacije je bil predvsem ta, da bi adminu omogočila mobilen pre
 </p>
 
 ## Podatkovni model baze
+![image](https://user-images.githubusercontent.com/77104160/211201700-4a4ca7f2-dfb3-4b37-83bb-d9fa2ee55076.png)
