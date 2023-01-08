@@ -7,22 +7,25 @@
 
 
 
-ADMIN PANEL (social media aplikacija)
+# ADMIN PANEL (social media aplikacija)
 
+## Avtorja
 63210324 Nejc Sneberger (spletna aplikacija, spletna storitev, podatkovna baza) <br />
 63210303 Tilen Smole (android odjemalec, porocilo, spletna storitev)
 
+## Spletna aplikacija
+sama aplikacija je dostopna na https://new---app.azurewebsites.net/
 
 
-
-
+## Mobilna aplikacija
 Namen mobilne aplikacije je bil predvsem ta, da bi adminu omogočila mobilen pregled nad samim delovanjem aplikacije. Admin ima možnost izbrisati uporabnika, pogledati vse uporabnike, videti poste, ter jih celo dodati.
 
-Sama spletna aplikacija je dosegljiva na https://new---app.azurewebsites.net/ .
 
-<img src="https://user-images.githubusercontent.com/77104160/211198804-bc8a5eb0-7a7e-498a-8827-3c275a5eab77.png" width=25% height=25%><img src="https://user-images.githubusercontent.com/77104160/211198970-27242cca-93a4-4ab4-a811-30136b2b3a01.png" width=25% height=25%>
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/77104160/211198804-bc8a5eb0-7a7e-498a-8827-3c275a5eab77.png" width="350" title="hover text">
+  <img src="https://user-images.githubusercontent.com/77104160/211199544-2fdd4c04-7a68-43aa-b0e3-6a2507fc4255.png" width="350" alt="accessibility text">
+   <figcaption>Prva stran mobilne aplikacije  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       </figcaption>
+    <figcaption>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Opcije, ki jih ponuja mobilna aplikacija</figcaption>
+</p>
 
-
-
-
-Prva stran mobilne aplikacije.
+## Podatkovni model baze
