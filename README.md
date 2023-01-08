@@ -1,4 +1,3 @@
-zaslonske slike grafičnega vmesnika vaše mobilne aplikacije in spletne aplikacije (cca 5 zaslonskih slik vse skupaj),
 kratek opis delovanja celotnega sistema
 
 
