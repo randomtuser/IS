@@ -3,6 +3,7 @@ using web.Services;
 using web.Middlewares;
 using web.Helpers;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +22,10 @@ builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSet
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IJwtUtils, JwtUtils>();
+
 
 var app = builder.Build();
 
@@ -35,13 +39,7 @@ if (app.Environment.IsDevelopment())
                .AllowAnyMethod()
                .AllowAnyOrigin();
     });
-}else if(app.Environment.IsProduction()){
-app.UseSwagger();
-    app.UseSwaggerUI();
 }
-
-
-
 
 app.UseMiddleware<JwtMiddleware>();
 app.UseMiddleware<ErrorHandlerMiddleware>();

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using web.Data;
 
@@ -11,9 +12,11 @@ using web.Data;
 namespace web.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221221135209_Updated tables and relationships")]
+    partial class Updatedtablesandrelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +48,7 @@ namespace web.Migrations
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("Comment", (string)null);
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("web.Entities.Post", b =>
@@ -72,7 +75,7 @@ namespace web.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Post", (string)null);
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("web.Entities.User", b =>
@@ -106,7 +109,7 @@ namespace web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("web.Entities.Comment", b =>
