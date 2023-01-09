@@ -7,6 +7,8 @@
 ## SPLETNA APLIKACIJA
 sama aplikacija je dostopna na https://new---app.azurewebsites.net/
 
+Sama aplikacija ni popolnoma delujoča, zato je v posebnem repozitoriju (https://github.com/snebi17/SocialNetworkWebApp.git). API pa je dostopen na https://github.com/snebi17/SocialNetworkAPI.git.
+
 
 <p align="left">
     <img src="https://user-images.githubusercontent.com/77104160/211207295-2fc85af1-6276-43ff-9423-8fc9de2c5130.png" width="400" alt="accessibility text">
