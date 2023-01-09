@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using web.Entities;
 using web.Models;
 using web.Services;
-using web.Entities;
 
 namespace web.Controllers 
 {
@@ -32,30 +30,16 @@ namespace web.Controllers
 
         [HttpGet]
         public IActionResult Get()
-        {   
+        {
+            
             return Ok(userService.GetUsers());
         }
-        
-        [HttpGet("{id}")]
-        public IActionResult GetUser(int id)
-        {
-            return Ok(userService.GetUser(id));
-        }
 
-        [Authorize(Roles = "Admin, Regular")]
-        [HttpDelete("{id}")]
+        [HttpDelete("remove")]
         public IActionResult Delete(int id) 
         {
-            userService.DeleteUser(id);
+            userService.RemoveById(id);
             return Ok(new { message = "User was successfully deleted!" });
-        }
-
-        [Authorize(Roles = "Admin, Regular")]
-        [HttpPut("{id}")]
-        public IActionResult Update(UserModel model)
-        {
-            userService.UpdateUser(model);
-            return Ok(new { message = "User was successfully updated!" });
         }
     }
 }

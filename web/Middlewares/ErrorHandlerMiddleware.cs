@@ -33,8 +33,7 @@ namespace web.Middlewares
                         response.StatusCode = (int)HttpStatusCode.InternalServerError;
                         break;
                 }
-                
-                
+
                 var result = JsonSerializer.Serialize(new { message = error?.Message });
                 await response.WriteAsync(result);
             }
