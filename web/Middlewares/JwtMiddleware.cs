@@ -17,7 +17,7 @@ namespace web.Middlewares
                 var userId = jwtUtils.ValidateToken(token);
                 if (userId != null) 
                 {
-                    context.Items["User"] = userService.GetById(userId.Value);
+                    context.Items["User"] = userService.GetUser(userId.Value);
                 }
 
                 await next(context);
