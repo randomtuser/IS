@@ -5,7 +5,7 @@
 63210303 Tilen Smole (Android odjemalec, spletna storitev, poročilo)
 
 ## SPLETNA APLIKACIJA
-sama aplikacija je dostopna na https://new---app.azurewebsites.net/
+sama aplikacija je dostopna na https://new---app.azurewebsites.net/swagger
 
 
 <p align="left">
