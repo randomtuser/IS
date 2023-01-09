@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nejc\\Documents\\School\\2L\\IS\\dev\\Projekt\\SocialNetworkAPI\\web\\web.csproj": {}
+    "C:\\Users\\tilen\\IS-3\\web\\web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nejc\\Documents\\School\\2L\\IS\\dev\\Projekt\\SocialNetworkAPI\\web\\web.csproj": {
+    "C:\\Users\\tilen\\IS-3\\web\\web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nejc\\Documents\\School\\2L\\IS\\dev\\Projekt\\SocialNetworkAPI\\web\\web.csproj",
+        "projectUniqueName": "C:\\Users\\tilen\\IS-3\\web\\web.csproj",
         "projectName": "web",
-        "projectPath": "C:\\Users\\Nejc\\Documents\\School\\2L\\IS\\dev\\Projekt\\SocialNetworkAPI\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\Nejc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nejc\\Documents\\School\\2L\\IS\\dev\\Projekt\\SocialNetworkAPI\\web\\obj\\",
+        "projectPath": "C:\\Users\\tilen\\IS-3\\web\\web.csproj",
+        "packagesPath": "C:\\Users\\tilen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tilen\\IS-3\\web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Nejc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\tilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

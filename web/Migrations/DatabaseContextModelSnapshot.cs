@@ -30,20 +30,15 @@ namespace web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Body")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PostId")
+                    b.Property<int?>("CreatedById")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("PostId");
+                    b.HasIndex("CreatedById");
 
                     b.ToTable("Comment", (string)null);
                 });
@@ -56,21 +51,21 @@ namespace web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("AuthorId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Body")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("CreatedById")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("CreatedById");
 
                     b.ToTable("Post", (string)null);
                 });
@@ -101,9 +96,6 @@ namespace web.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
@@ -111,42 +103,20 @@ namespace web.Migrations
 
             modelBuilder.Entity("web.Entities.Comment", b =>
                 {
-                    b.HasOne("web.Entities.User", "Author")
-                        .WithMany("Comments")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("web.Entities.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById");
 
-                    b.HasOne("web.Entities.Post", "Post")
-                        .WithMany("Comments")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Author");
-
-                    b.Navigation("Post");
+                    b.Navigation("CreatedBy");
                 });
 
             modelBuilder.Entity("web.Entities.Post", b =>
                 {
-                    b.HasOne("web.Entities.User", "Author")
-                        .WithMany("Posts")
-                        .HasForeignKey("AuthorId");
+                    b.HasOne("web.Entities.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById");
 
-                    b.Navigation("Author");
-                });
-
-            modelBuilder.Entity("web.Entities.Post", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("web.Entities.User", b =>
-                {
-                    b.Navigation("Comments");
-
-                    b.Navigation("Posts");
+                    b.Navigation("CreatedBy");
                 });
 #pragma warning restore 612, 618
         }

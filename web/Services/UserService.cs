@@ -1,9 +1,8 @@
 using web.Entities;
 using web.Data;
-using web.Helpers;
+// using web.Helpers;
 using web.Models;
 using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using BCrypt.Net;
 
 namespace web.Services
@@ -13,28 +12,24 @@ namespace web.Services
         public void Register(RegisterModel model);
         public AuthResponse Authenticate(AuthRequest model);
         public List<User> GetUsers();
-        public User GetUser(int id);
-        public void DeleteUser(int id);
-        public void UpdateUser(UserModel model);
+        public User GetById(int id);
+        public void RemoveById(int id);
     }
 
     public class UserService : IUserService 
     {
         private DatabaseContext context;
-        private IJwtUtils jwtUtils;
         public IMapper mapper;
-        public UserService(DatabaseContext context, IMapper mapper, IJwtUtils jwtUtils) 
+        public UserService(DatabaseContext context, IMapper mapper) 
         {
             this.context = context;
             this.mapper = mapper;
-            this.jwtUtils = jwtUtils;
         }
         public void Register(RegisterModel model) {
             if (context.Users.Any(u => u.Email == model.Email)) {
                 throw new ApplicationException("Email already exists!");
             }
             var user = mapper.Map<User>(model);
-            user.RoleId = Role.Regular;
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password);
             user.CreatedAt = DateTime.Now;
             context.Users.Add(user);
@@ -48,32 +43,25 @@ namespace web.Services
             }
 
             var response = mapper.Map<AuthResponse>(user);
-            response.Token = jwtUtils.GenerateToken(user);
+            response.Token = "secret-token" + user.CreatedAt.ToString();
             response.ExpirationDate = DateTime.Now.AddMinutes(15);
             return response;
         }
+
         public List<User> GetUsers() {
             return context.Users.ToList();
         }
-        public User GetUser(int id) {
+
+        public User GetById(int id) {
             return context.Users.SingleOrDefault<User>(u => u.Id == id);
         }
-        public void DeleteUser(int id) {
+        
+        public void RemoveById(int id) {
             var user = context.Users.SingleOrDefault(u => u.Id == id);
             if (user == null) {
-                throw new ApplicationException("User with this ID couldn't be found!");
+                throw new ApplicationException("User with this ID doesn't exist!");
             } 
             context.Users.Remove(user);
-            context.SaveChanges();
-        }
-        public void UpdateUser(UserModel model)
-        {
-            var entity = context.Users.Find(model.Id);
-            if (entity == null)
-            {
-                throw new ApplicationException("User with this ID couldn't be found!");
-            }
-            context.Entry(entity).CurrentValues.SetValues(model);
             context.SaveChanges();
         }
     }

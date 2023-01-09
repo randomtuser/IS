@@ -11,9 +11,6 @@ namespace web.Profiles
             CreateMap<RegisterModel, User>();
             CreateMap<User, AuthResponse>();
             CreateMap<User, AuthRequest>();
-            CreateMap<User, UserModel>();
-            CreateMap<Post, PostModel>();
-            CreateMap<Comment, CommentModel>();
         }
     }
 }
